@@ -1,11 +1,12 @@
-﻿using System.Collections.Immutable;
+﻿using System.Globalization;
 using FunctionalKataLib;
 
 namespace FunctionalKata.Map;
 
 public record Coord(int X, int Y)
 {
-    public override string ToString() => $"({X}, {Y})";
+    public override string ToString() => 
+        $"({X.ToString(CultureInfo.InvariantCulture)}, {Y.ToString(CultureInfo.InvariantCulture)})";
 }
 
 public class Grid
